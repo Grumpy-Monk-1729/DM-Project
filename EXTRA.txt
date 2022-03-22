@@ -1,0 +1,14 @@
+booster -> by default is gbtree
+
+# acc_xgb=[]
+# kfold = []
+
+# for i in tqdm(range(10)):
+    
+#     for i in np.arange(0.01,0.2,0.02):
+#         xgb = XGBClassifier(n_estimators=100, eval_metric='mlogloss',eta=np.round(i,2))
+#         xgb.fit(X_train, y_train)
+#         preds = xgb.predict(X_test)
+#         acc_xgb.append((preds == y_test).sum().astype(float) / len(preds)*100)
+    
+#     kfold.append(acc_xgb)

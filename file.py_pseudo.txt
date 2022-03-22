@@ -1,0 +1,32 @@
+
+
+SET all_filenames TO ['new INPUT/QSO.csv','new INPUT/Galaxy.csv','new INPUT/Star.csv']
+
+SET combined_csv TO pd.concat([pd.read_csv(f) FOR f IN all_filenames ])
+
+#export to csv
+
+combined_csv.to_csv( "SDSS_combined.csv", index=False, encoding='utf-8-sig')
+
+SET df TO pd.read_csv('SDSS_combined.csv')
+
+#Handling missing values
+
+SET df TO df.dropna()
+
+SET sdss_df_fe TO df
+
+SET sdss_df_fe TO sdss_df
+
+
+
+# encode DEFINE CLASS labels to integers
+
+SET le TO LabelEncoder()
+
+SET y_encoded TO le.fit_transform(sdss_df_fe['class'])
+
+SET sdss_df_fe['class'] TO y_encoded
+
+
+
